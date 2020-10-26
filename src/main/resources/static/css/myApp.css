@@ -1,0 +1,97 @@
+  
+
+body {
+  width:100%;
+  position: relative;
+  min-height: 100vh;	
+  /*margin-bottom: 30px;  Margin bottom by footer height */
+}
+
+.center{
+	width:calc(100vw-55vw);
+	padding:20px;
+	box-shadow:0px 0px 20px 0 rgba(0,0,0,.5); 
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 50px; /* Set the fixed height of the footer here */
+  line-height: 50px; /* Vertically center the text there */
+  
+}
+
+.switch
+{
+        width: 60px;
+        height: 30px;
+        position: relative;
+        display:inline-block;
+}
+
+.switch input
+{
+        display: none;
+}
+
+.slider
+{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        cursor: pointer;
+        background-color: gray;
+        border-radius: 30px;
+        border-color: black;
+        
+}
+.slider:before
+{
+    
+    position: absolute;
+    background-color: white;
+    height: 20px;
+    width: 20px;
+    content: "";
+    left: 5px;
+    top: 5px;
+    border-radius: 50%;
+    transition: ease-in-out .5s;
+}
+
+.slider:after
+{
+    content: "Off";
+    
+    color: white;
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 70%;
+    transition: all .5s;
+    font-size: 10px;
+    font-family: Verdana,sans-serif;
+    
+}
+
+input:checked + .slider:after
+{
+    transition: all .5s;
+    left: 30%;
+
+    content: "On"
+ 
+}
+input:checked + .slider
+{
+    background-color: blue;
+    
+}
+
+input:checked + .slider:before
+{
+    transform: translateX(30px);
+}
