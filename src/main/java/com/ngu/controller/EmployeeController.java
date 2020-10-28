@@ -118,39 +118,39 @@ public class EmployeeController
 				return "redirect:/showEmployee";
 			}
 			
-			@RequestMapping(value="/status/{id}/activation", method= RequestMethod.GET )
-			@ResponseBody
-			public String changeStatus(@PathVariable int id)
-			{
-				Employee employee = employeeService.get(id);
-				boolean isActive = employee.isActive();
-				employee.setActive(!isActive);
-				employeeService.update(employee);
-				return (isActive) ? 
-						"you have successfully De-Activated the user :" + employee.getUsername() :
-						"you have successfully Activated the user :" + employee.getUsername();
-			}
-			
-			@RequestMapping(value="/changeRole", method= RequestMethod.GET )
-			@ResponseBody
-			public String changeRole(Employee employee, @RequestParam Integer id,@RequestParam String role)
-			{
-				try 
-				{
-					employee = employeeService.get(id);
-					String username = employee.getUsername();
-					employee.setRole(role);
-				
-					employeeService.update(employee);
-					return username;
-				}
-				catch (Exception e )
-				{
-					return "Unable to Change Role of User";
-				}
-				
-				
-			}
+//			@RequestMapping(value="/status/{id}/activation", method= RequestMethod.GET )
+//			@ResponseBody
+//			public String changeStatus(@PathVariable int id)
+//			{
+//				Employee employee = employeeService.get(id);
+//				boolean isActive = employee.isActive();
+//				employee.setActive(!isActive);
+//				employeeService.update(employee);
+//				return (isActive) ? 
+//						"you have successfully De-Activated the user :" + employee.getUsername() :
+//						"you have successfully Activated the user :" + employee.getUsername();
+//			}
+//			
+//			@RequestMapping(value="/changeRole", method= RequestMethod.GET )
+//			@ResponseBody
+//			public String changeRole(Employee employee, @RequestParam Integer id,@RequestParam String role)
+//			{
+//				try 
+//				{
+//					employee = employeeService.get(id);
+//					String username = employee.getUsername();
+//					employee.setRole(role);
+//				
+//					employeeService.update(employee);
+//					return username;
+//				}
+//				catch (Exception e )
+//				{
+//					return "Unable to Change Role of User";
+//				}
+//				
+//				
+//			}
 			
 			
 			@RequestMapping(value = "/qrCode/{username}" ,method =RequestMethod.GET)

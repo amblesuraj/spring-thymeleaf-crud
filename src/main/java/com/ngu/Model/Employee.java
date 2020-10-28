@@ -36,32 +36,20 @@ public class Employee {
 	private String email;
 	
 	
-	@Column(name="active")
-	private boolean active;
+//	@Column(name="active")
+//	private boolean active;
 	
-	@NotNull
-	@Past
-	@DateTimeFormat(pattern="dd-mm-yyyy")
-	private Date dateOfBirth;
+//	@NotNull
+//	@Past
+//	@DateTimeFormat(pattern="dd-mm-yyyy")
+//	private Date dateOfBirth;
 	
 	@Column(name = "phone")
 	private Long phone;
-	@Column(name="role")
-	private String role;
+//	@Column(name="role")
+//	private String role;
 	
 	
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
 	public Long getPhone() {
 		return phone;
 	}
@@ -92,28 +80,10 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public boolean isActive() {
-		return active;
-	}
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-	public Employee() {
-	
-	}
-	public Employee(int id, String username, String password, String email, boolean active) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.active = active;
-	}
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
-				+ ", active=" + active + "]";
+				+ ", phone=" + phone + "]";
 	}
 	
 	

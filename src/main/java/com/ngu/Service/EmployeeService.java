@@ -101,13 +101,13 @@ public class EmployeeService {
 		return employeeRepository.findAll(sort);
 	}
 	
-	public void changeRole(String role)
-	{
-		Employee employee = new Employee();
-			employee.setRole(role);
-		
-			employeeRepository.save(employee);
-	}
+//	public void changeRole(String role)
+//	{
+//		Employee employee = new Employee();
+//			employee.setRole(role);
+//		
+//			employeeRepository.save(employee);
+//	}
 
 	public Employee findByUsername(String username) {
 		
